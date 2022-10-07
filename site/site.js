@@ -1,10 +1,10 @@
 var AppClass = function() {
   var appstate = {
     target: 'confetti-holder',
-    max: 1000,
+    max: 400,
     size: 1,
     animate: true,
-    props: ['circle', 'square', 'triangle', 'line', {type:'svg', src:'hat.svg', weight: 0.2, size: 25}],
+    props: ['circle', 'square', 'triangle', 'line', {type:'svg', src:'hat.svg', weight: 0.2, size: 25},{type:'svg', src:'Its_a_Boy.svg', weight: 0.2, size: 150}],
     colors: [[26,42,120],[129,149,249],[54,87,247],[43,69,199]],
     clock: 25,
     rotate: false,
@@ -14,15 +14,25 @@ var AppClass = function() {
     respawn: true
   };
 
-  
+
   var confetti = new ConfettiGenerator(appstate);
-  
+
   var render = function() {
     confetti.render();
   };
 
   var start = function() {
-    confetti.render();
+    render();
+  };
+
+  var clear = function() {
+    confetti.clear();
+  }
+
+  return {
+    start: start,
+    clear: clear,
+    render: render
   };
 }
 
@@ -30,5 +40,4 @@ var app = null;
 
 window.onload = function(){
   app = new AppClass();
-  
 }

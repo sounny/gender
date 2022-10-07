@@ -6,18 +6,18 @@
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-
     <link rel="stylesheet" href="site/site.css" />
   <link rel="stylesheet" href="css/style.css">
   <script src="js/raf.js"></script>
 
 </head>
 <body>
- 
-    
-  <div id="scratch"><img src="./images/hello.gif" /></div>
-  
- <canvas id="confetti-holder" position="absolute"></canvas>
+
+<canvas id="confetti-holder" position="absolute"></canvas>
+
+<div id="scratch"><img src="./images/overlay.png" /></div>
+
+
 
   <script src="./js/ScratchIt.min.js"></script>
     <!-- Importing generator -->
@@ -34,7 +34,9 @@
     // event handler that fades out the overlay once 50% of it has been removed
     function onReveal(){
       containerEl.className += ' revealed';
-      app.start();
+      setTimeout(function(){ app.start(); }, 1000);
+
+
 
       // NOTE: really weird workaround to force Edge 16 to actually detect the css class name addition and render the fade out transition. getElementById doesn't work, it actually needs to be getElementsByTagName. Any style could be changed (like fontSize) to trigger the update
       if(window.navigator.userAgent.indexOf("Edge") > -1){
