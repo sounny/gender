@@ -17,12 +17,14 @@
     
   <div id="scratch"><img src="./images/wonka.jpg" /></div>
   
-   <!-- Importing generator -->
+ 
+
+  <script src="./js/ScratchIt.min.js"></script>
+    <!-- Importing generator -->
     <script type="text/javascript" src="dist/index.min.js"></script>
     <!-- Starting site logic -->
     <script type="text/javascript" src="site/site.js"></script>
-
-  <script src="./js/ScratchIt.min.js"></script>
+  
   <script>
     var containerEl = document.getElementById('scratch'),
         overlayImgUrl = 'images/overlay3.png',
@@ -32,6 +34,7 @@
     // event handler that fades out the overlay once 50% of it has been removed
     function onReveal(){
       containerEl.className += ' revealed';
+      app.render();
 
       // NOTE: really weird workaround to force Edge 16 to actually detect the css class name addition and render the fade out transition. getElementById doesn't work, it actually needs to be getElementsByTagName. Any style could be changed (like fontSize) to trigger the update
       if(window.navigator.userAgent.indexOf("Edge") > -1){
