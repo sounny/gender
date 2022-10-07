@@ -19,7 +19,7 @@ var AppClass = function() {
   var confetti = null;
 
 
-  };
+
 
 
     appstate.colors = '['+document.getElementById('colors').value+']';
@@ -34,8 +34,7 @@ var AppClass = function() {
     appstate.rotate = document.getElementById('rotate').checked;
 
     document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
-  };
-  //
+  
 
   var render = function() {
     if(confetti)
@@ -57,9 +56,7 @@ var AppClass = function() {
     clear: clear,
     render: render
   };
-}
 
-///
 
 var app = null;
 
