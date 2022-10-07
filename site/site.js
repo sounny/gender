@@ -14,21 +14,6 @@ var AppClass = function() {
     respawn: true
   };
 
-
-
-  appstate.colors = '['+document.getElementById('colors').value+']';
-  appstate.colors = JSON.parse(appstate.colors);
-
-  appstate.animate = document.getElementById('animate').checked;
-
-  appstate.start_from_edge = document.getElementById('start_from_edge').checked;
-
-  appstate.respawn = document.getElementById('respawn').checked;
-
-  appstate.rotate = document.getElementById('rotate').checked;
-
-  document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
-  
   
   var confetti = new ConfettiGenerator(appstate);
   
