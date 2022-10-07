@@ -14,7 +14,7 @@ var AppClass = function() {
     respawn: true
   };
 
-  var confetti = null;
+
 
   appstate.colors = '['+document.getElementById('colors').value+']';
   appstate.colors = JSON.parse(appstate.colors);
@@ -30,11 +30,9 @@ var AppClass = function() {
   document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
   
   
-
+  var confetti = new ConfettiGenerator(appstate);
+  
   var render = function() {
-    if(confetti)
-      confetti.clear();
-    confetti = new ConfettiGenerator(appstate);
     confetti.render();
   };
 
