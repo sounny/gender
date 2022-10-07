@@ -14,26 +14,22 @@ var AppClass = function() {
     respawn: true
   };
 
-  
-
   var confetti = null;
 
+  appstate.colors = '['+document.getElementById('colors').value+']';
+  appstate.colors = JSON.parse(appstate.colors);
 
+  appstate.animate = document.getElementById('animate').checked;
 
+  appstate.start_from_edge = document.getElementById('start_from_edge').checked;
 
+  appstate.respawn = document.getElementById('respawn').checked;
 
-    appstate.colors = '['+document.getElementById('colors').value+']';
-    appstate.colors = JSON.parse(appstate.colors);
+  appstate.rotate = document.getElementById('rotate').checked;
 
-    appstate.animate = document.getElementById('animate').checked;
-
-    appstate.start_from_edge = document.getElementById('start_from_edge').checked;
-
-    appstate.respawn = document.getElementById('respawn').checked;
-
-    appstate.rotate = document.getElementById('rotate').checked;
-
-    document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
+  document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
+  
+};
   
 
   var render = function() {
@@ -56,7 +52,7 @@ var AppClass = function() {
     clear: clear,
     render: render
   };
-
+}
 
 var app = null;
 
