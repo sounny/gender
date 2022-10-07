@@ -29,7 +29,6 @@ var AppClass = function() {
 
   document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
   
-};
   
 
   var render = function() {
