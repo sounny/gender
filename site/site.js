@@ -40,5 +40,5 @@ var app = null;
 
 window.onload = function(){
   app = new AppClass();
-  app.start();
+  
 }
